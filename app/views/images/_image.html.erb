@@ -5,9 +5,9 @@
 <p>
   <a href="#">Vis stort bilde</a>
   |
-  <a href="#" target="_blank">Se bildet på flickr (nytt vindu)</a>
+  <a href="<%= image.image %>" target="_blank">Se bildet på flickr (nytt vindu)</a>
   |
-  <a href="#" target="_blank">Se fotograffen på flickr (nytt vindu)</a>
+  <a href="http://www.flickr.com/photos/<%= image.photographer.flickr_id %>" target="_blank">Se fotograffen på flickr (nytt vindu)</a>
 </p>
 
 <img src="<%= image.image_url %>"/>
