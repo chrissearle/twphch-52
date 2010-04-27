@@ -1,0 +1,15 @@
+<% title "Challenges" %>
+
+<table>
+  <tr>
+    <th>Tag</th>
+    <th>Title</th>
+  </tr>
+  <% for challenge in @challenges %>
+    <tr>
+      <td><%=h challenge.tag %></td>
+      <td><%=h challenge.title %></td>
+    </tr>
+  <% end %>
+</table>
+

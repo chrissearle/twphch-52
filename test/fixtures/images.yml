@@ -1,0 +1,11 @@
+one:
+  flickr_id: MyString
+  image_url: MyString
+  image_large_url: MyString
+  title: MyString
+
+two:
+  flickr_id: MyString
+  image_url: MyString
+  image_large_url: MyString
+  title: MyString

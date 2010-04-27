@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title><%= h(yield(:title) || "Untitled") %></title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+
+  <%= stylesheet_link_tag 'style' %>
+  <%= stylesheet_link_tag 'orange' %>
+
+  <%= yield(:head) %>
+</head>
+
+<body>
+<div id="main">
+  <div id="links">
+    <!-- **** INSERT LINKS HERE **** -->
+    <a href="http://twitter.com/Twphch">Twitter</a> | <a href="http://www.flickr.com/groups/twphch/">Flickr Group</a>
+    | <a href="http://vote.twphch.com">Ukentlig avstemninger</a>
+  </div>
+  <div id="logo"><h1>Twitter Photo Challenge</h1>
+
+    <h2>&quot;det første året&quot;</h2>
+  </div>
+  <div id="content">
+    <div id="column1">
+      <div class="sidebaritem">
+        <h1>Årets avstemning</h1>
+
+        <p>Vi skal kåre det beste bildet fra det første året.</p>
+
+        <p>Her har du samlet alle førsteplassholdere.</p>
+
+        <p>Stem for akkurat det bildet du synes er best.</p>
+      </div>
+
+      <div class="sidebaritem">
+        <h1>For å stemme</h1>
+
+        <p>Bare klikk på bildet du vil stemme for.</p>
+      </div>
+
+    </div>
+    <div id="column2">
+      <%- flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+
+      <%= yield %>
+
+    </div>
+  </div>
+  <div id="footer">
+    copyright &copy; 2006 your name | <a href="#">email@emailaddress</a> | <a
+  href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> | <a
+  href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.dcarter.co.uk">design
+    by dcarter</a>
+  </div>
+</div>
+</body>
+</html>
