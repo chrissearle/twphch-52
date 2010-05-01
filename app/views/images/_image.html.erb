@@ -3,7 +3,7 @@
 <p><strong>Utfordring:</strong> <%= image.challenge.tag %> - <%= image.challenge.title %></p>
 
 <p>
-  <a href="#">Vis stort bilde</a>
+  <a class="fancyboxImage" id="fb_<%= image_counter %>"></a>
   |
   <a href="<%= image.image %>" target="_blank">Se bildet på flickr (nytt vindu)</a>
   |
@@ -11,8 +11,16 @@
     (nytt vindu)</a>
 </p>
 
-<% if voting_open? and logged_in? and not_own_image?(image)%>
+<% if voting_open? and logged_in? and not_own_image?(image) %>
     <%= link_to image_tag(image.image_url), new_vote_path('img'=> image.id) %>
 <% else %>
     <img src="<%= image.image_url %>"/>
 <% end %>
+
+<div style="display: none">
+  <a id="img_fb_<%= image_counter %>" rel="group" class="flickrImage"
+     title="<%= image.challenge.tag %> - <%= image.challenge.title %>"
+     href="<%= image.image_large_url %>">
+    <img src="<%= image.image_url %>" alt="<%= image.challenge.tag %> - <%= image.challenge.title %>"/>
+  </a>
+</div>
