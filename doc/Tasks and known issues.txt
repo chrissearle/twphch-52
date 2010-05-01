@@ -1,5 +1,3 @@
 Tasks
 
 Results page
-
-View large js
