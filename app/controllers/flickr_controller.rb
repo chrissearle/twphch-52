@@ -2,10 +2,8 @@ class FlickrController < ApplicationController
   def frob
     frob = params[:frob]
 
-    auth_token = flickr.auth.getToken :frob => frob
-
-    session[:authtoken] = auth_token.token
-
+    flickr.auth.getToken :frob => frob
+    
     login = flickr.test.login
 
     session[:username] = login.username
