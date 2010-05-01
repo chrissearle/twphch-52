@@ -307,3 +307,56 @@ ol li {
 table {
     margin: 10px;
 }
+
+#flash_notice {
+    border: solid 1px #FF9C21;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#flash_error {
+    border: solid 1px #FF9C21;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 2em;
+    color: red;
+    background-color: white;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #FF9C21;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #FF9C21;
+  color: #fff;
+}
+
+#errorExplanation p {
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  list-style: disc;
+}
