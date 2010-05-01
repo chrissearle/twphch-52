@@ -1,16 +1,5 @@
-Known issues
-
-Error messages when voting
-
-When an AR error message is being displayed for photographer_flickr_id - the message is getting prefixed by "Photographer flickr"
-
-
-
-
 Tasks
 
 Results page
 
-Check format of flickr ID
-
-Integrate with flickr to give login and avoid getattr?
+View large js
