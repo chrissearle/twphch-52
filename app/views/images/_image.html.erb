@@ -1,4 +1,4 @@
-<h1><%= image.title %></h1>
+<h1><% if results_open? %><%= image.rank %> : <% end %><%= image.title %></h1>
 
 <p><strong>Utfordring:</strong> <%= image.challenge.tag %> - <%= image.challenge.title %></p>
 
@@ -10,6 +10,8 @@
   <a href="http://www.flickr.com/photos/<%= image.photographer.flickr_id %>" target="_blank">Se fotograffen på flickr
     (nytt vindu)</a>
 </p>
+
+<% if results_open? %><p><%= pluralize image.votecount, 'stemme', 'stemmer' %></p><% end %>
 
 <% if voting_open? and logged_in? and not_own_image?(image) %>
     <%= link_to image_tag(image.image_url), new_vote_path('img'=> image.id) %>
