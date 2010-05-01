@@ -32,13 +32,24 @@
         <p>Her har du samlet alle førsteplassholdere.</p>
 
         <p>Stem for akkurat det bildet du synes er best.</p>
+
+        <p>Det er selvfølgelig ikke lov å stemme på ditt eget bilde!</p>
       </div>
 
-      <div class="sidebaritem">
-        <h1>For å stemme</h1>
+      <% if voting_open? %>
+          <div class="sidebaritem">
+            <h1>For å stemme</h1>
 
-        <p>Bare klikk på bildet du vil stemme for.</p>
-      </div>
+            <p>Bare klikk på bildet du vil stemme for.</p>
+          </div>
+      <% else %>
+          <div class="sidebaritem">
+            <h1>Avstemningen</h1>
+
+            <p>Åpnes: </p>
+            <p>Stenges: </p>
+          </div>
+      <% end %>
 
     </div>
     <div id="column2">
