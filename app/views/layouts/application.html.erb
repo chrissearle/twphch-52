@@ -14,9 +14,19 @@
 <body>
 <div id="main">
   <div id="links">
-    <!-- **** INSERT LINKS HERE **** -->
-    <a href="http://twitter.com/Twphch">Twitter</a> | <a href="http://www.flickr.com/groups/twphch/">Flickr Group</a>
-    | <a href="http://vote.twphch.com">Ukentlig avstemninger</a>
+    <% if session[:username].blank? %>
+        <a href="<%= auth_url %>">Logg inn gjennom flickr</a>
+    <% else %>
+        <%= session[:username] %>
+        |
+        <%= link_to 'Logg ut', logout_path %>
+    <% end %>
+    |
+    <a href="http://twitter.com/Twphch">Twitter</a>
+    |
+    <a href="http://www.flickr.com/groups/twphch/">Flickr Group</a>
+    |
+    <a href="http://vote.twphch.com">Ukentlig avstemninger</a>
   </div>
   <div id="logo"><h1>Twitter Photo Challenge</h1>
 
@@ -40,13 +50,28 @@
           <div class="sidebaritem">
             <h1>For å stemme</h1>
 
-            <p>Bare klikk på bildet du vil stemme for.</p>
+            <% if logged_in? %>
+                <p>Bare klikk på bildet du vil stemme for.</p>
+
+                <p>Du kan stemme så mange ganger du ønsker helt fram til avstemningens slutt. Den siste stemme er den
+                  som vil gjelder. Det betyr at hvis du endre mening så er det bare å stemme på nytt.</p>
+            <% else %>
+                <p>Først må du logge inn via Flickr - se lenken "Logg inn gjennom flickr" øverst.</p>
+
+                <p>Hvis dette er første gang må du godkjenne dette hos flickr. Applikasjon ber om leserettigheter. Det
+                  er fordi det er den minste rettighet det går annen å be om. Men - vi leser ikke noe annet enn ditt
+                  brukernavn/bruker ID.</p>
+
+                <p>Obs - siden dette er ikke samme applikasjon som vi bruker til de ukentlige avstemninger så vil du
+                  måtte godkjenne den selv om du deltar i de ukentlige avstemninger.</p>
+            <% end %>
           </div>
       <% else %>
           <div class="sidebaritem">
             <h1>Avstemningen</h1>
 
             <p>Åpnes: </p>
+
             <p>Stenges: </p>
           </div>
       <% end %>
@@ -71,7 +96,7 @@
 <!-- Woopra Code Start -->
 <script type="text/javascript" src="//static.woopra.com/js/woopra.v2.js"></script>
 <script type="text/javascript">
-woopraTracker.track();
+    woopraTracker.track();
 </script>
 <!-- Woopra Code End -->
 </body>

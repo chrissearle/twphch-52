@@ -11,7 +11,7 @@
     (nytt vindu)</a>
 </p>
 
-<% if voting_open? %>
+<% if voting_open? and logged_in? and not_own_image?(image)%>
     <%= link_to image_tag(image.image_url), new_vote_path('img'=> image.id) %>
 <% else %>
     <img src="<%= image.image_url %>"/>

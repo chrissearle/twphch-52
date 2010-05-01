@@ -5,18 +5,21 @@ class VotesController < ApplicationController
       redirect_to images_path
     end
 
-    @vote = Vote.new
-    @vote.image = Image.find(params["img"])
-  end
+    vote = Vote.find_by_photographer_flickr_id(session[:userid])
 
-  def create
-    @vote = Vote.new(params[:vote])
+    flash[:notice] = "Din stemme er oppdatert"
 
-    if @vote.save
-      flash[:notice] = 'Takk for din stemme.'
-      redirect_to images_path
-    else
-      render :action => "new"
+    if vote.nil?
+      vote = Vote.new
+
+      flash[:notice] = "Takk for din stemme"
     end
+
+    vote.image = Image.find(params["img"])
+    vote.photographer_flickr_id = session[:userid]
+
+    vote.save
+
+    redirect_to images_path
   end
 end
