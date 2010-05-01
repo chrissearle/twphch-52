@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def auth_url
-    session[:frob] ||= flickr.auth.getFrob
+    session[:frob] = flickr.auth.getFrob
 
     FlickRaw.auth_url :frob => session[:frob], :perms => 'read'
   end
