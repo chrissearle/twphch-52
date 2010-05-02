@@ -1,15 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#   
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Major.create(:name => 'Daley', :city => cities.first)
-
-Challenge.delete_all
-Image.delete_all
-Photographer.delete_all
-
+[Challenge, Image, Photographer].each(&:delete_all)
+ 
 # select concat('{ :tag => "',  tag,  '", :title => "', description, '"},') from challenge)
 
 Challenge.create([{ :tag => "TwPhCh001", :title => "Rødt" },
@@ -158,5 +148,12 @@ Image.create([{ :flickr_id => "3529583372", :challenge => Challenge.find_by_tag(
               { :flickr_id => "4481865704", :challenge => Challenge.find_by_tag("TwPhCh047"), :title => "Flabelina pedata", :image_url => "http://farm5.static.flickr.com/4036/4481865704_4213ab7065.jpg", :image_large_url => "http://farm5.static.flickr.com/4036/4481865704_4213ab7065_b.jpg", :image => "http://www.flickr.com/photos/toby77/4481865704/", :photographer => Photographer.find_by_flickr_id("24480349@N07")},
               { :flickr_id => "4498014837", :challenge => Challenge.find_by_tag("TwPhCh048"), :title => "Aurora borealis", :image_url => "http://farm3.static.flickr.com/2787/4498014837_5650765ef8.jpg", :image_large_url => "http://farm3.static.flickr.com/2787/4498014837_5650765ef8.jpg", :image => "http://www.flickr.com/photos/35559038@N02/4498014837/", :photographer => Photographer.find_by_flickr_id("35559038@N02")},
               { :flickr_id => "4506008366", :challenge => Challenge.find_by_tag("TwPhCh049"), :title => "Catkin in sunset", :image_url => "http://farm5.static.flickr.com/4016/4506008366_8d23a4dc2a.jpg", :image_large_url => "http://farm5.static.flickr.com/4016/4506008366_8d23a4dc2a_b.jpg", :image => "http://www.flickr.com/photos/oter/4506008366/", :photographer => Photographer.find_by_flickr_id("28745942@N05")},
-              { :flickr_id => "4545476950", :challenge => Challenge.find_by_tag("TwPhCh050"), :title => "Kilden Helse (Klem edition)", :image_url => "http://farm5.static.flickr.com/4067/4545476950_3cb428bd03.jpg", :image_large_url => "http://farm5.static.flickr.com/4067/4545476950_3cb428bd03_b.jpg", :image => "http://www.flickr.com/photos/nerdegutt/4545476950/", :photographer => Photographer.find_by_flickr_id("22786627@N04")}])
+              { :flickr_id => "4545476950", :challenge => Challenge.find_by_tag("TwPhCh050"), :title => "Kilden Helse (Klem edition)", :image_url => "http://farm5.static.flickr.com/4067/4545476950_3cb428bd03.jpg", :image_large_url => "http://farm5.static.flickr.com/4067/4545476950_3cb428bd03_b.jpg", :image => "http://www.flickr.com/photos/nerdegutt/4545476950/", :photographer => Photographer.find_by_flickr_id("22786627@N04")},
+              { :flickr_id => "4560903301", :challenge => Challenge.find_by_tag("TwPhCh051"), :title => "Maria", :image_url => "http://farm4.static.flickr.com/3545/4560903301_972709307a.jpg", :image_large_url => "http://farm4.static.flickr.com/3545/4560903301_9f612c3fc3_o.jpg", :image => "http://www.flickr.com/photos/sviland/4560903301/", :photographer => Photographer.find_by_flickr_id("35748277@N08")}])
 
+# Tidy images
+Image.all.each do |image|
+  image.votecount = 0
+  image.rank = 0
+  image.save
+end
