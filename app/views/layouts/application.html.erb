@@ -15,13 +15,16 @@
 <div id="main">
   <div id="links">
     <% if session[:username].blank? %>
-        <a href="<%= auth_url %>">Logg inn gjennom flickr</a>
+        <% if voting_open? %>
+            <a href="<%= auth_url %>">Logg inn gjennom flickr</a>
+            |
+        <% end %>
     <% else %>
         <%= session[:username] %>
         |
         <%= link_to 'Logg ut', logout_path %>
+        |
     <% end %>
-    |
     <a href="http://twitter.com/Twphch">Twitter</a>
     |
     <a href="http://www.flickr.com/groups/twphch/">Flickr Group</a>
