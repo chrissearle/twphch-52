@@ -82,9 +82,9 @@
               <div class="sidebaritem">
                 <h1>Avstemningen</h1>
 
-                <p>Åpnes: 11. mai 2010 10:00</p>
+                <p>Åpnes: <%= ENV['OPEN_DATE'] %></p>
 
-                <p>Stenges: 23. mai 2010 21:00</p>
+                <p>Stenges: <%= ENV['CLOSE_DATE'] %></p>
               </div>
           <% end %>
       <% end %>
