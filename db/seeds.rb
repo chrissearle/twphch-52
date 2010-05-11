@@ -52,7 +52,8 @@ Challenge.create([{ :tag => "TwPhCh001", :title => "Rødt" },
                   { :tag => "TwPhCh048", :title => "Natt" },
                   { :tag => "TwPhCh049", :title => "Vårtegn" },
                   { :tag => "TwPhCh050", :title => "Lang Lukkertid" },
-                  { :tag => "TwPhCh051", :title => "Fritt Motiv" }])
+                  { :tag => "TwPhCh051", :title => "Fritt Motiv" },
+                  { :tag => "TwPhCh052", :title => "Phi - Det gylne snitt - 1.618"}])
 
 # select concat('{ :flickr_id => "',  p.flickr_id,  '", :fullname => "',  IF(p.fullname IS NULL, "", p.fullname), '", :username => "', p.username, '"},') from photographer p where p.flickr_id in (select distinct i.photographer_flickr_id from image i where i.final_rank = 1)
 
@@ -149,7 +150,8 @@ Image.create([{ :flickr_id => "3529583372", :challenge => Challenge.find_by_tag(
               { :flickr_id => "4498014837", :challenge => Challenge.find_by_tag("TwPhCh048"), :title => "Aurora borealis", :image_url => "http://farm3.static.flickr.com/2787/4498014837_5650765ef8.jpg", :image_large_url => "http://farm3.static.flickr.com/2787/4498014837_5650765ef8.jpg", :image => "http://www.flickr.com/photos/35559038@N02/4498014837/", :photographer => Photographer.find_by_flickr_id("35559038@N02")},
               { :flickr_id => "4506008366", :challenge => Challenge.find_by_tag("TwPhCh049"), :title => "Catkin in sunset", :image_url => "http://farm5.static.flickr.com/4016/4506008366_8d23a4dc2a.jpg", :image_large_url => "http://farm5.static.flickr.com/4016/4506008366_8d23a4dc2a_b.jpg", :image => "http://www.flickr.com/photos/oter/4506008366/", :photographer => Photographer.find_by_flickr_id("28745942@N05")},
               { :flickr_id => "4545476950", :challenge => Challenge.find_by_tag("TwPhCh050"), :title => "Kilden Helse (Klem edition)", :image_url => "http://farm5.static.flickr.com/4067/4545476950_3cb428bd03.jpg", :image_large_url => "http://farm5.static.flickr.com/4067/4545476950_3cb428bd03_b.jpg", :image => "http://www.flickr.com/photos/nerdegutt/4545476950/", :photographer => Photographer.find_by_flickr_id("22786627@N04")},
-              { :flickr_id => "4560903301", :challenge => Challenge.find_by_tag("TwPhCh051"), :title => "Maria", :image_url => "http://farm4.static.flickr.com/3545/4560903301_972709307a.jpg", :image_large_url => "http://farm4.static.flickr.com/3545/4560903301_9f612c3fc3_o.jpg", :image => "http://www.flickr.com/photos/sviland/4560903301/", :photographer => Photographer.find_by_flickr_id("35748277@N08")}])
+              { :flickr_id => "4560903301", :challenge => Challenge.find_by_tag("TwPhCh051"), :title => "Maria", :image_url => "http://farm4.static.flickr.com/3545/4560903301_972709307a.jpg", :image_large_url => "http://farm4.static.flickr.com/3545/4560903301_9f612c3fc3_o.jpg", :image => "http://www.flickr.com/photos/sviland/4560903301/", :photographer => Photographer.find_by_flickr_id("35748277@N08")},
+              { :flickr_id => "4578199439", :challenge => Challenge.find_by_tag("TwPhCh052"), :title => "Red Cloud formations at Langevann (Explored)", :image_url => "http://farm5.static.flickr.com/4035/4578199439_cf5e8cf9af.jpg", :image_large_url => "http://farm5.static.flickr.com/4035/4578199439_cf5e8cf9af_b.jpg", :image => "http://www.flickr.com/photos/oddsmedsrud/4578199439/", :photographer => Photographer.find_by_flickr_id("41277157@N04")}])
 
 # Tidy images
 Image.all.each do |image|
