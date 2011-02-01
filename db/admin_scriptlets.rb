@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 # Assign vote count from votes
 
 Image.all.each do |image|

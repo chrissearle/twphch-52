@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class Vote < ActiveRecord::Base
   belongs_to :image
 

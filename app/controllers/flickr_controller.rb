@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class FlickrController < ApplicationController
   def frob
     frob = params[:frob]

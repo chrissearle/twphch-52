@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class AddChallengeIdToImage < ActiveRecord::Migration
   def self.up
     add_column :images, :challenge_id, :integer

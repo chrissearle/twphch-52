@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 # Be sure to restart your server when you modify this file.
 
 Twphch52::Application.config.session_store :cookie_store, :key => '_twphch-52_session'

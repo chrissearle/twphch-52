@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class Image < ActiveRecord::Base
   belongs_to :challenge
   belongs_to :photographer

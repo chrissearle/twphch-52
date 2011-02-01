@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class Photographer < ActiveRecord::Base
   has_many :images
 

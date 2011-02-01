@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class CreateChallenges < ActiveRecord::Migration
   def self.up
     create_table :challenges do |t|

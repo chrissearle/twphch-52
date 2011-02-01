@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class VotesController < ApplicationController
   def new
     if voting_open?

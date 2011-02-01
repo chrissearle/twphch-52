@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class AddResultsToImage < ActiveRecord::Migration
   def self.up
     add_column :images, :rank, :integer, :default => 0

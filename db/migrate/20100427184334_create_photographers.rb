@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 class CreatePhotographers < ActiveRecord::Migration
   def self.up
     create_table :photographers do |t|

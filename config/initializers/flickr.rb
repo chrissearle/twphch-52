@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 require 'flickraw'
 
 FlickRaw.api_key = ENV['FLICKR_KEY']
