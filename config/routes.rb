@@ -1,9 +1,9 @@
-ActionController::Routing::Routes.draw do |map|
-  map.frob '/frob', :controller => 'flickr', :action => 'frob'
-  map.logout '/logout', :controller => 'flickr', :action => 'logout'
+Twphch52::Application.routes.draw do
+  match '/frob' => "flickr#frob", :as => :frob
+  match '/logout' => "flickr#logout", :as => :logout
 
-  map.resources :images
-  map.resources :votes
+  resources :images
+  resources :votes
 
-  map.root :controller => :images
+  root :to => "images#index"
 end

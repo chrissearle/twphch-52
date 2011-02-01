@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 [Challenge, Image, Photographer].each(&:delete_all)
  
 # select concat('{ :tag => "',  tag,  '", :title => "', description, '"},') from challenge)
