@@ -1,5 +1,3 @@
-# coding: UTF-8
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -15,39 +13,39 @@
 ActiveRecord::Schema.define(:version => 20100501141126) do
 
   create_table "challenges", :force => true do |t|
-    t.string   "tag"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "tag"
+    t.string    "title"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "images", :force => true do |t|
-    t.string   "flickr_id"
-    t.string   "image_url"
-    t.string   "image_large_url"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "challenge_id"
-    t.string   "image"
-    t.integer  "photographer_id"
-    t.integer  "rank",            :default => 0
-    t.integer  "votecount",       :default => 0
+    t.string    "flickr_id"
+    t.string    "image_url"
+    t.string    "image_large_url"
+    t.string    "title"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "challenge_id"
+    t.string    "image"
+    t.integer   "photographer_id"
+    t.integer   "rank",            :default => 0
+    t.integer   "votecount",       :default => 0
   end
 
   create_table "photographers", :force => true do |t|
-    t.string   "flickr_id"
-    t.string   "username"
-    t.string   "fullname"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "flickr_id"
+    t.string    "username"
+    t.string    "fullname"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "votes", :force => true do |t|
-    t.string   "photographer_flickr_id"
-    t.integer  "image_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "photographer_flickr_id"
+    t.integer   "image_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end

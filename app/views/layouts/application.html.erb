@@ -76,15 +76,16 @@
                       måtte godkjenne den selv om du deltar i de ukentlige avstemninger.</p>
                 <% end %>
               </div>
-          <% else %>
-              <div class="sidebaritem">
-                <h1>Avstemningen</h1>
-
-                <p>Åpnes: <%= ENV['OPEN_DATE'] %></p>
-
-                <p>Stenges: <%= ENV['CLOSE_DATE'] %></p>
-              </div>
           <% end %>
+
+
+          <div class="sidebaritem">
+            <h1>Avstemningen</h1>
+
+            <p>Åpnes: <%= ENV['OPEN_DATE'] %></p>
+
+            <p>Stenges: <%= ENV['CLOSE_DATE'] %></p>
+          </div>
       <% end %>
 
     </div>
